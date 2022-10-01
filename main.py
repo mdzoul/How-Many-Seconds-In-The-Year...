@@ -1,16 +1,18 @@
 from replit import clear
 
+
 def is_leap(year):
-  if year % 4 == 0:
-    if year % 100 == 0:
-      if year % 400 == 0:
-        return True
-      else:
-        return False
+    if year % 4 == 0:
+        if year % 100 == 0:
+            if year % 400 == 0:
+                return True
+            else:
+                return False
+        else:
+            return True
     else:
-      return True
-  else:
-    return False
+        return False
+
 
 def days_in_month(year):
     monthDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
@@ -22,6 +24,7 @@ def days_in_month(year):
         print(f"\n{year} is not a leap year.")
     return monthDays
 
+
 def calculate_seconds_in_year(monthDays):
     totalDays = sum(monthDays)
     totalHours = totalDays * 24
@@ -29,15 +32,17 @@ def calculate_seconds_in_year(monthDays):
     totalSec = totalMin * 60
     return totalSec
 
+
 endYearCheck = False
 while not endYearCheck:
     year = int(input("Enter a year: "))
-    
+
     monthDays = days_in_month(year)
     totalSec = calculate_seconds_in_year(monthDays)
     print(f"There are {totalSec} seconds in the year {year}.")
-    
-    if input("\nWould you like to calculate another year? Y/N ").lower() == 'n':
+
+    if input(
+            "\nWould you like to calculate another year? Y/N ").lower() == 'n':
         endYearCheck = True
     else:
         clear()
