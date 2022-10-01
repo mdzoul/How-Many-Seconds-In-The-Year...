@@ -1,5 +1,6 @@
-from replit import clear
+# Todo: Print totalDays, totalHours, totalMin as well
 
+from replit import clear
 
 def is_leap(year):
     if year % 4 == 0:
@@ -39,7 +40,7 @@ while not endYearCheck:
 
     monthDays = days_in_month(year)
     totalSec = calculate_seconds_in_year(monthDays)
-    print(f"There are {totalSec} seconds in the year {year}.")
+    print(f"There are {totalSec:,} seconds in the year {year}.")
 
     if input(
             "\nWould you like to calculate another year? Y/N ").lower() == 'n':
